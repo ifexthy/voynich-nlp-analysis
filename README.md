@@ -4,7 +4,7 @@
 🔍 Overview
 -----------
 
-This project explores the underlying structure of the Voynich Manuscript using modern natural language processing techniques. By analyzing transliterated word forms (likely EVA format), we apply clustering, POS inference, and syntactic modeling to test whether the manuscript behaves like a real language — even without deciphering glyph meanings.
+This project explores the underlying structure of the Voynich Manuscript using modern natural language processing techniques. By analyzing transliterated word forms, we apply clustering, POS inference, and syntactic modeling to test whether the manuscript behaves like a real language — even without deciphering glyph meanings.
 
 * * *
 
@@ -108,6 +108,13 @@ The manuscript encodes a structured constructed or mnemonic language using sylla
 *   No semantic translation attempted — only structural modeling
 
 * * *
+
+✍️ Authors Note
+--------------
+This project was developed as a learning experience by someone outside the fields of linguistics or cryptography. My primary goal was to better understand how modern AI and NLP techniques — including SBERT embeddings, clustering, 
+and part-of-speech inference — could be applied to a complex, real-world mystery. 
+
+While this is not an attempt to translate or decrypt the manuscript, I hope it contributes a meaningful framework for others to build upon, critique, or explore further
 
 🤝 Contributions Welcome
 ------------------------
