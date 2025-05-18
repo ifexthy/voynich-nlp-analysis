@@ -21,8 +21,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--reducer", type=str, help="Reducer to use, either umap or pca.", default="pca")
 args = parser.parse_args()
 directory = './data/voynitchese'  # path to your Voynich text files
-#suffixes = ['aiin', 'dy', 'in', 'chy', 'chey', 'edy', 'ey', 'y']
-suffixes = []
+suffixes = ['aiin', 'dy', 'in', 'chy', 'chey', 'edy', 'ey', 'y']
 # === STRIP SUFFIX FUNCTION ===
 def strip_suffix(word):
     for suffix in sorted(suffixes, key=len, reverse=True):
