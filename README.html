@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Voynich Manuscript Structural Analysis</title>
+</head>
+<body>
+
+<h1>📜 Voynich Manuscript Structural Analysis</h1>
+
+<h2>🔍 Overview</h2>
+<p>This project explores the underlying structure of the Voynich Manuscript using modern natural language processing techniques. 
+By analyzing transliterated word forms (likely EVA format), we apply clustering, POS inference, and syntactic modeling to test 
+whether the manuscript behaves like a real language — even without deciphering glyph meanings.</p>
+
+<hr>
+
+<h2>🧠 Why This Matters</h2>
+<p>The Voynich Manuscript remains undeciphered, with no agreed linguistic or cryptographic solution. 
+Traditional analyses often fall into two camps: <i>statistical entropy checks</i> or <i>wild guesswork</i>. 
+This project offers a middle path — using computational linguistics to assess whether the manuscript encodes real, structured language-like behavior.</p>
+
+<hr>
+
+<h2>📁 Project Structure</h2>
+<pre><code>/data/
+  AB.docx                         # Full transliteration with folio/line tags
+  voynichese/                     # Root word .txt files
+  stripped_cluster_lookup.json    # Cluster ID per stripped root
+  unique_stripped_words.json      # All stripped root forms
+  voynich_line_clusters.csv       # Cluster sequences per line
+
+/scripts/
+  cluster_roots.py                # SBERT clustering + suffix stripping
+  map_lines_to_clusters.py        # Maps manuscript lines to cluster IDs
+  pos_model.py                    # Infers grammatical roles from cluster behavior
+  transition_matrix.py            # Builds and visualizes cluster transitions
+  lexicon_builder.py              # Creates a candidate lexicon by section and role
+  cluster_language_similarity.py  # (Optional) Compares clusters to real-world languages
+
+/results/
+  Figure_1.png                    # SBERT clusters (PCA reduced)
+  transition_matrix_heatmap.png  # Markov transition matrix
+  cluster_role_summary.csv
+  cluster_transition_matrix.csv
+  lexicon_candidates.csv
+</code></pre>
+
+<hr>
+
+<h2>✅ Key Contributions</h2>
+<ul>
+  <li>Clustering of stripped root words using multilingual SBERT</li>
+  <li>Identification of function-word-like vs. content-word-like clusters</li>
+  <li>Markov-style transition modeling of cluster sequences</li>
+  <li>Folio-based syntactic structure mapping (Botanical, Biological, etc.)</li>
+  <li>Generation of a data-driven lexicon hypothesis table</li>
+</ul>
+
+<hr>
+
+<h2>📈 Key Findings</h2>
+<ul>
+  <li><b>Cluster 8</b> exhibits high frequency, low diversity, and frequent line-starts — likely a <i>function word group</i></li>
+  <li><b>Cluster 3</b> has high diversity and flexible positioning — likely a <i>root content class</i></li>
+  <li><b>Transition matrix</b> shows strong internal structure, far from random</li>
+  <li>Cluster usage and POS patterns differ by <i>manuscript section</i> (e.g., Biological vs Botanical)</li>
+</ul>
+
+<hr>
+
+<h2>🧬 Hypothesis</h2>
+<p>The manuscript encodes a structured constructed or mnemonic language using syllabic padding and positional repetition. 
+It exhibits syntax, function/content separation, and section-aware linguistic shifts — even in the absence of direct translation.</p>
+
+<hr>
+
+<h2>▶️ How to Reproduce</h2>
+<pre><code># 1. Install dependencies
+pip install -r requirements.txt
+
+# 2. Run each stage of the pipeline
+python scripts/cluster_roots.py
+python scripts/map_lines_to_clusters.py
+python scripts/pos_model.py
+python scripts/transition_matrix.py
+python scripts/lexicon_builder.py
+</code></pre>
+
+<hr>
+
+<h2>📊 Example Visualizations</h2>
+
+<h4>📌 Figure 1: SBERT cluster embeddings (PCA-reduced)</h4>
+<img src="./results/Figure_1.png" width="720" alt="Cluster visualization">
+
+<h4>📌 Figure 2: Transition Matrix Heatmap</h4>
+<img src="./results/transition_matrix_heatmap.png" width="720" alt="Transition matrix heatmap">
+
+<hr>
+
+<h2>📌 Limitations</h2>
+<ul>
+  <li>Cluster-to-word mappings are indirect — frequency estimates may overlap</li>
+  <li>Suffix stripping is heuristic and may remove meaningful endings</li>
+  <li>No semantic translation attempted — only structural modeling</li>
+</ul>
+
+<hr>
+
+<h2>🤝 Contributions Welcome</h2>
+<p>This project is open to extensions, critiques, and collaboration — especially from linguists, cryptographers, conlang enthusiasts, and computational language researchers.</p>
+
+</body>
+</html>
