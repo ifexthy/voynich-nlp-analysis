@@ -1,5 +1,3 @@
- Voynich Manuscript Structural Analysis
-
 📜 Voynich Manuscript Structural Analysis
 =========================================
 
