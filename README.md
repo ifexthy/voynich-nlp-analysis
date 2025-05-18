@@ -4,7 +4,11 @@
 🔍 Overview
 -----------
 
-This project explores the underlying structure of the Voynich Manuscript using modern natural language processing techniques. By analyzing transliterated word forms, we apply clustering, POS inference, and syntactic modeling to test whether the manuscript behaves like a real language — even without deciphering glyph meanings.
+This started as a personal challenge to figure out what modern NLP could tell us about the Voynich Manuscript — without falling into translation speculation or pattern hallucination. I'm not a linguist or cryptographer. I just wanted to see if something as strange as Voynichese would hold up under real language modeling: clustering, POS inference, Markov transitions, and section-specific patterns.
+
+Spoiler: it kinda did.
+
+This repo walks through everything — from suffix stripping to SBERT embeddings to building a lexicon hypothesis. No magic, no GPT guessing. Just a skeptical test of whether the manuscript has *structure that behaves like language*, even if we don’t know what it’s saying.
 
 * * *
 
@@ -51,6 +55,26 @@ The Voynich Manuscript remains undeciphered, with no agreed linguistic or crypto
 *   Markov-style transition modeling of cluster sequences
 *   Folio-based syntactic structure mapping (Botanical, Biological, etc.)
 *   Generation of a data-driven lexicon hypothesis table
+
+* * *
+
+🔧 Preprocessing Choices
+-------------------
+One of the most important assumptions I made was about how to handle the Voynich words before clustering. Specifically: I stripped a set of recurring suffix-like endings from each word — things like aiin, dy, chy, and similar variants. The goal was to isolate what looked like root forms that repeated with variation, under the assumption that these suffixes might be:
+
+*   Phonetic padding
+*   Grammatical particles
+*   Chant-like or mnemonic repetition
+*   Or… just noise
+
+This definitely improved the clustering behavior — similar stems grouped more tightly, and the transition matrix showed cleaner structural patterns. But it's also a strong preprocessing decision that may have: 
+
+*   Removed actual morphological information
+*   Disguised meaningful inflectional variants
+*   Introduced a bias toward function over content
+
+So it’s not neutral — it helped, but it also shaped the results.
+If someone wants to fork this repo and re-run the pipeline without suffix stripping — or treat suffixes as their own token class — I’d be genuinely interested in the comparison.
 
 * * *
 
@@ -111,10 +135,11 @@ The manuscript encodes a structured constructed or mnemonic language using sylla
 
 ✍️ Authors Note
 --------------
-This project was developed as a learning experience by someone outside the fields of linguistics or cryptography. My primary goal was to better understand how modern AI and NLP techniques — including SBERT embeddings, clustering, 
-and part-of-speech inference — could be applied to a complex, real-world mystery. 
+This project was built as a way to learn — about AI, NLP, and how far structured analysis can get you without assuming what you're looking at. I’m not here to crack the Voynich. But I do believe that modeling its structure with modern tools is a better path than either wishful translation or academic dismissal.
 
-While this is not an attempt to translate or decrypt the manuscript, I hope it contributes a meaningful framework for others to build upon, critique, or explore further
+So if you're here for a Rosetta Stone, you're out of luck.
+
+If you're here to model a language that may not want to be modeled — welcome.
 
 🤝 Contributions Welcome
 ------------------------
