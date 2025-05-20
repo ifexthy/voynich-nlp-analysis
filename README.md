@@ -143,6 +143,19 @@ If you're here to model a language that may not want to be modeled — welcome.
 
 * * *
 
+𝌡 Recent Enhancements & Contributor Acknowledgements
+------------------------
+This project now includes:
+*   UMAP and PaCMAP visualization support, in addition to PCA - enabling nonlinear dimensionality reduction for richer clustering insights.
+*   Currently handles 3 reducers via CLI argument: no argument is PCA, --reducer umap, and --reducer pacmap.
+*   Should be noted that I haven't been able to get this project to work correctly on MacOS, only Windows.
+
+**Special thanks to:**
+*   @theElandor - for contributing the UMAP implemtation, CLI parsing improvements and cleanup via a pull request.
+*   @patcon for contributing the PaCMAP/LocalMAP dimension reduction algorithms. I haven't gotten to LocalMAP yet but PaCMAP has really made a difference.
+ 
+* * *
+
 🤝 Contributions Welcome
 ------------------------
 
