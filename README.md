@@ -122,7 +122,7 @@ The manuscript encodes a structured constructed or mnemonic language using sylla
 
 ![Cluster visualization](./results/Figure_3_umap.png)
 
-#### 📌 Figure 3: SBERT cluster embeddings (UMAP-reduced)
+#### 📌 Figure 3: SBERT cluster embeddings (PaCMAP-reduced)
 
 ![Cluster visualization](./results/Figure_4_pacmap.png)
 
